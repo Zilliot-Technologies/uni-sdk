@@ -1,0 +1,5 @@
+if (NOT PICO_NO_HARDWARE)
+    add_subdirectory(uni_click)
+    add_subdirectory(uni_matrix)
+    add_subdirectory(uni_sensor)
+endif ()

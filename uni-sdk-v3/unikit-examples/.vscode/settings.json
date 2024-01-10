@@ -1,0 +1,38 @@
+{
+  // These settings tweaks to the cmake plugin will ensure
+  // that you debug using cortex-debug instead of trying to launch
+  // a Pico binary on the host
+  "cmake.statusbar.advanced": {
+    "debug": {
+      "visibility": "hidden"
+    },
+    "launch": {
+      "visibility": "hidden"
+    },
+    "build": {
+      "visibility": "default"
+    },
+    "buildTarget": {
+      "visibility": "default"
+    }
+  },
+  "cmake.buildBeforeRun": true,
+  "cmake.configureOnOpen": true,
+  "cmake.configureSettings": {
+    "CMAKE_MODULE_PATH": "${env:PICO_INSTALL_PATH}/pico-sdk-tools"
+  },
+  "cmake.generator": "Ninja", //Ninja
+  "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+  "cortex-debug.liveWatchRefreshRate": 250,
+  "memory-view.showMemoryPanel": true,
+  "files.associations": {
+    "ws2812.pio.h": "c",
+    "stdio.h": "c",
+    "disp.h": "c",
+    "veml6030.h": "c",
+    "gpio.h": "c",
+    "uni_click.h": "c",
+    "adc.h": "c"
+  },
+  "C_Cpp.errorSquiggles": "disabled"
+}

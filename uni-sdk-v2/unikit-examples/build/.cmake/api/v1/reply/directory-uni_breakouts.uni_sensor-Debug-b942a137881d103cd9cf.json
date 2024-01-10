@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "uni_breakouts/uni_sensor",
+		"source" : "uni_breakouts/uni_sensor"
+	}
+}
