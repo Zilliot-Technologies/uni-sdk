@@ -2,8 +2,8 @@
 #include "pico/stdlib.h"
 #include "uni_click.h"
 
-// #define USE_MIKRO_BUS
-#define USE_QWIIC
+#define USE_MIKRO_BUS
+//#define USE_QWIIC
 
 #define I2C_SDA_PIN 22
 #define I2C_SCL_PIN 23
