@@ -1,0 +1,71 @@
+#include <stdio.h>
+#include "pico/stdlib.h"
+#include "hardware/i2c.h"
+
+
+#define IS31FL3728_ADDRESS_WRITE 0x60
+#define IS31FL3728_ADDRESS_READ 0x61
+
+/** Configuration register */
+#define IS31FL3728_REG_CONFIGURATION		0x00
+
+/**Update Column Register */
+#define IS31FL3728_REG_UPDATE_COLUMN       0x0C
+
+/** Lighting Effect Register */
+#define IS31FL3728_REG_LIGHTING_EFFECT		0x0D
+
+/**Current Setting For Each Row Output */
+#define IS31FL3728_CURRENT_SETTING_40		0
+#define IS31FL3728_CURRENT_SETTING_45		1
+#define IS31FL3728_CURRENT_SETTING_50		2
+#define IS31FL3728_CURRENT_SETTING_55		3
+#define IS31FL3728_CURRENT_SETTING_60		4
+#define IS31FL3728_CURRENT_SETTING_65		5
+#define IS31FL3728_CURRENT_SETTING_70		6
+#define IS31FL3728_CURRENT_SETTING_75		7
+#define IS31FL3728_CURRENT_SETTING_5		8
+#define IS31FL3728_CURRENT_SETTING_10		9
+#define IS31FL3728_CURRENT_SETTING_15		10
+#define IS31FL3728_CURRENT_SETTING_20		11
+#define IS31FL3728_CURRENT_SETTING_25		12
+#define IS31FL3728_CURRENT_SETTING_30		13
+#define IS31FL3728_CURRENT_SETTING_35		14
+
+
+void init_IS31FL3728(i2c_inst_t *INSTANCE,uint8_t SDA_PIN,uint8_t SCL_PIN);
+
+/**To set the row current
+ *IS31FL3728_CURRENT_SETTING_5		
+ *IS31FL3728_CURRENT_SETTING_10		
+ *IS31FL3728_CURRENT_SETTING_15		
+ *IS31FL3728_CURRENT_SETTING_20		
+ *IS31FL3728_CURRENT_SETTING_25		
+ *IS31FL3728_CURRENT_SETTING_30		
+ *IS31FL3728_CURRENT_SETTING_35
+ *IS31FL3728_CURRENT_SETTING_40		
+ *IS31FL3728_CURRENT_SETTING_45		
+ *IS31FL3728_CURRENT_SETTING_50		
+ *IS31FL3728_CURRENT_SETTING_55		
+ *IS31FL3728_CURRENT_SETTING_60		
+ *IS31FL3728_CURRENT_SETTING_65		
+ *IS31FL3728_CURRENT_SETTING_70		
+ *IS31FL3728_CURRENT_SETTING_75		
+		
+*/
+void set_row_current(uint8_t level);
+
+void write_data(uint8_t reg,uint8_t data);
+
+void write_led(uint8_t led);
+
+void update_screen(void);
+
+void IS31FL3728_displaytext(char* text);
+
+void clearbuffer(void);
+
+void clearscreen(void);
+
+void shutdown(bool state);
+
