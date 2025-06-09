@@ -1,5 +1,0 @@
-if (NOT PICO_NO_HARDWARE)
-    add_subdirectory(gpio_irq)
-    add_subdirectory(gpio_read)
-    add_subdirectory(gpio_write)
-endif ()
