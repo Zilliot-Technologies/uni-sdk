@@ -28,29 +28,29 @@ set(PICO_BOARD pico CACHE STRING "Board type")
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)
 
-project(uni-sensor-acc C CXX ASM)
+project(uni-sensor-th C CXX ASM)
 
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(uni-sensor-acc BMA400.c uni-sensor-acc.c )
+add_executable(uni-sensor-th  SHT4X.c uni-sensor-th.c )
 
-pico_set_program_name(uni-sensor-acc "uni-sensor-acc")
-pico_set_program_version(uni-sensor-acc "0.1")
+pico_set_program_name(uni-sensor-th "uni-sensor-th")
+pico_set_program_version(uni-sensor-th "0.1")
 
 # Modify the below lines to enable/disable output over UART/USB
-pico_enable_stdio_uart(uni-sensor-acc 1)
-pico_enable_stdio_usb(uni-sensor-acc 0)
+pico_enable_stdio_uart(uni-sensor-th 1)
+pico_enable_stdio_usb(uni-sensor-th 0)
 
 # Add the standard library to the build
-target_link_libraries(uni-sensor-acc pico_stdlib hardware_i2c)
+target_link_libraries(uni-sensor-th  pico_stdlib hardware_i2c) 
 
 # Add the standard include files to the build
-target_include_directories(uni-sensor-acc PRIVATE
+target_include_directories(uni-sensor-th PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}
 )
 
-pico_add_extra_outputs(uni-sensor-acc)
+pico_add_extra_outputs(uni-sensor-th)
 
