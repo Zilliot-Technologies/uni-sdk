@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
 #include "hardware/i2c.h"
-#include "uni_matrix.h"
+#include "IS31FL3729.h"
 
 i2c_inst_t *IS31FL3729_INSTANCE;
 
